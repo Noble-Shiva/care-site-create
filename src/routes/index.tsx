@@ -80,10 +80,10 @@ const NAV = [
 const CONDITIONS = ["Asthma", "COPD", "Chronic Cough", "Allergy", "Preventive Lung Health"];
 
 const TRUST = [
-  { icon: LungMark, label: "Respiratory care", sub: "for all ages" },
-  { icon: Users, label: "Family doctor", sub: "you can trust" },
-  { icon: ClipboardList, label: "Second opinion", sub: "& health queries" },
-  { icon: ShieldCheck, label: "Preventive care", sub: "for a healthier you" },
+  { img: iconLungs.url, label: "Respiratory care", sub: "for all ages" },
+  { img: iconFamily.url, label: "Family doctor", sub: "you can trust" },
+  { img: iconClipboard.url, label: "Second opinion &", sub: "health queries" },
+  { img: iconQuitSmoking.url, label: "Preventive care", sub: "for a healthier you" },
 ];
 
 const SERVICES = [
