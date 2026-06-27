@@ -38,6 +38,10 @@ import iconLungs from "@/assets/icon-lungs.png.asset.json";
 import iconFamily from "@/assets/icon-family.png.asset.json";
 import iconClipboard from "@/assets/icon-clipboard.png.asset.json";
 import iconQuitSmoking from "@/assets/icon-quit-smoking.png.asset.json";
+import serviceOnline from "@/assets/service-online.png.asset.json";
+import serviceClinic from "@/assets/service-clinic.png.asset.json";
+import servicePft from "@/assets/service-pft.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -88,25 +92,29 @@ const TRUST = [
 
 const SERVICES = [
   {
-    icon: Video,
+    image: serviceOnline.url,
+    imageClass: "object-contain",
     title: "Online Consultation",
     titleTe: "ఆన్‌లైన్ సంప్రదింపులు",
     desc: "Get expert advice from the comfort of your home.",
   },
   {
-    icon: Stethoscope,
+    image: serviceClinic.url,
+    imageClass: "object-cover",
     title: "In-Clinic Consultation",
     titleTe: "క్లినిక్‌లో సంప్రదింపులు",
     desc: "Personalized evaluation and treatment with advanced diagnostic facilities.",
   },
   {
-    icon: Activity,
+    image: servicePft.url,
+    imageClass: "object-cover",
     title: "PFT",
     titleSub: "(Pulmonary Function Test / Spirometry)",
     titleTe: "ఊపిరితిత్తుల పనితీరును పరీక్షించే విధానం",
     desc: "Assess your lung function accurately with advanced spirometry testing.",
   },
 ];
+
 
 const LIBRARY = [
   { icon: Wind, label: "What is Asthma?" },
@@ -152,13 +160,6 @@ function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
   );
 }
 
-function ServiceIllustration({ Icon }: { Icon: typeof Video }) {
-  return (
-    <div className="grid aspect-square w-full place-items-center rounded-[12px] bg-secondary text-primary">
-      <Icon className="h-16 w-16" strokeWidth={1.4} />
-    </div>
-  );
-}
 
 function Header() {
   return (
@@ -320,32 +321,41 @@ function Services() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   return (
     <section id="services" className="mx-auto max-w-7xl px-4 pb-8 md:px-8 md:pb-10">
-      <div className="grid gap-5 lg:grid-cols-[1fr_1fr_1fr_320px] lg:gap-6">
+      <div className="grid gap-5 lg:grid-cols-[1fr_1fr_1fr_300px] lg:gap-5">
         {SERVICES.map((s) => (
           <Card
             key={s.title}
-            className="flex flex-col gap-4 rounded-[12px] border-border p-5 shadow-sm"
+            className="flex flex-row gap-4 overflow-hidden rounded-[12px] border-border p-4 shadow-sm"
           >
-            <div className="grid gap-4 sm:grid-cols-[140px_1fr] lg:grid-cols-1">
-              <ServiceIllustration Icon={s.icon} />
-              <div className="flex flex-col">
-                <h3 className="font-serif text-xl font-semibold text-primary md:text-2xl">
-                  {s.title}
-                  {s.titleSub && (
-                    <span className="mt-0.5 block text-xs font-normal text-muted-foreground">
-                      {s.titleSub}
-                    </span>
-                  )}
-                </h3>
-                <p className="mt-1 text-sm text-foreground/80">{s.titleTe}</p>
-                <Button asChild className="mt-3 h-11 rounded-[10px] text-xs font-semibold tracking-[0.12em]">
-                  <a href={BOOK_HREF}>BOOK NOW</a>
-                </Button>
-              </div>
+            <div className="w-[42%] shrink-0 overflow-hidden rounded-[10px] bg-secondary/40">
+              <img
+                src={s.image}
+                alt={s.title}
+                className={`h-full w-full ${s.imageClass}`}
+                loading="lazy"
+              />
             </div>
-            <p className="text-sm text-muted-foreground">{s.desc}</p>
+            <div className="flex min-w-0 flex-1 flex-col">
+              <h3 className="font-serif text-lg font-semibold leading-tight text-primary">
+                {s.title}
+              </h3>
+              {s.titleSub && (
+                <p className="mt-0.5 text-[11px] leading-snug text-primary/80">
+                  {s.titleSub}
+                </p>
+              )}
+              <p className="mt-1 text-[13px] leading-snug text-foreground/80">{s.titleTe}</p>
+              <p className="mt-2 text-[13px] leading-snug text-muted-foreground">{s.desc}</p>
+              <Button
+                asChild
+                className="mt-auto h-10 self-start rounded-[10px] px-5 text-[11px] font-semibold tracking-[0.14em]"
+              >
+                <a href={BOOK_HREF}>BOOK NOW</a>
+              </Button>
+            </div>
           </Card>
         ))}
+
 
         <Card className="relative flex flex-col overflow-hidden rounded-[12px] border-border bg-secondary/60 p-6 shadow-sm">
           <h3 className="font-serif text-xl font-semibold text-primary">Are you experiencing?</h3>
@@ -396,15 +406,16 @@ function LibrarySection() {
           <a
             key={l.label}
             href="#library"
-            className="flex flex-col items-start gap-3 rounded-[12px] border border-border bg-card p-4 text-sm font-medium text-foreground transition-colors hover:border-primary hover:bg-secondary"
+            className="flex items-center gap-3 rounded-[12px] border border-border bg-card p-3 text-[13px] font-semibold leading-tight text-primary transition-colors hover:border-primary hover:bg-secondary"
           >
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[10px] bg-secondary text-primary">
-              <l.icon className="h-5 w-5" />
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-[10px] bg-secondary text-primary">
+              <l.icon className="h-6 w-6" strokeWidth={1.4} />
             </span>
-            <span className="leading-tight">{l.label}</span>
+            <span>{l.label}</span>
           </a>
         ))}
       </div>
+
     </section>
   );
 }
