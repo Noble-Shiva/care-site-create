@@ -1,6 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Activity, CalendarCheck, ClipboardList, Leaf, MapPin, Menu, MessageCircle, Phone, Quote, ShieldCheck, Stethoscope, User as UserIcon, Users, Video, Wind, Youtube, Mail, Cigarette, ArrowRight } from "lucide-react";
+import {
+  Activity,
+  CalendarCheck,
+  ClipboardList,
+  Leaf,
+  MapPin,
+  Menu,
+  MessageCircle,
+  Phone,
+  Quote,
+  ShieldCheck,
+  Stethoscope,
+  User as UserIcon,
+  Users,
+  Video,
+  Wind,
+  Youtube,
+  Mail,
+  Cigarette,
+  ArrowRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -20,8 +40,6 @@ import libCough from "@/assets/lib-cough.png.asset.json";
 import libAllergy from "@/assets/lib-allergy.png.asset.json";
 import libSmoking from "@/assets/lib-smoking.png.asset.json";
 import libPft from "@/assets/lib-pft.png.asset.json";
-
-
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -95,7 +113,6 @@ const SERVICES = [
   },
 ];
 
-
 const LIBRARY = [
   { img: libAsthma.url, label: "What is Asthma?" },
   { img: libCopd.url, label: "What is COPD?" },
@@ -115,7 +132,16 @@ const SYMPTOMS = [
 
 function LungMark({ className = "h-10 w-10" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden
+    >
       <path d="M32 14v22" />
       <path d="M28 22c-2 6-8 8-12 8-2 8 0 18 8 20 4 1 8-2 8-6V22z" />
       <path d="M36 22c2 6 8 8 12 8 2 8 0 18-8 20-4 1-8-2-8-6V22z" />
@@ -139,7 +165,6 @@ function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
     </div>
   );
 }
-
 
 function Header() {
   return (
@@ -217,7 +242,8 @@ function Hero() {
             <span className="text-sm font-medium">A practice built on compassion</span>
           </div>
           <h1 className="font-serif text-3xl font-semibold leading-[1.1] tracking-tight text-foreground md:text-4xl lg:text-5xl">
-            Helping you breathe<br className="hidden sm:block" /> better every day
+            Helping you breathe
+            <br className="hidden sm:block" /> better every day
           </h1>
           <p className="mt-4 text-sm font-medium text-foreground/80">Evidence-based care for</p>
           <ul className="mt-1 flex flex-wrap gap-x-2 gap-y-1 text-sm text-foreground md:text-base">
@@ -239,7 +265,12 @@ function Hero() {
                 </span>
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="h-12 rounded-[10px] border-primary px-5 text-primary hover:bg-secondary">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="h-12 rounded-[10px] border-primary px-5 text-primary hover:bg-secondary"
+            >
               <a href={BOOK_HREF}>
                 <Stethoscope className="mr-2 h-4 w-4" />
                 <span className="flex flex-col items-start leading-tight">
@@ -268,7 +299,6 @@ function Hero() {
             />
           </div>
         </div>
-
       </div>
     </section>
   );
@@ -296,7 +326,6 @@ function TrustStrip() {
   );
 }
 
-
 function Services() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   return (
@@ -320,9 +349,7 @@ function Services() {
                 {s.title}
               </h3>
               {s.titleSub && (
-                <p className="mt-0.5 text-[11px] leading-snug text-primary/80">
-                  {s.titleSub}
-                </p>
+                <p className="mt-0.5 text-[11px] leading-snug text-primary/80">{s.titleSub}</p>
               )}
               <p className="mt-1 text-[13px] leading-snug text-foreground/80">{s.titleTe}</p>
               <p className="mt-2 text-[13px] leading-snug text-muted-foreground">{s.desc}</p>
@@ -335,7 +362,6 @@ function Services() {
             </div>
           </Card>
         ))}
-
 
         <Card className="relative flex flex-col overflow-hidden rounded-[12px] border-border bg-secondary/60 p-6 shadow-sm">
           <h3 className="font-serif text-xl font-semibold text-primary">Are you experiencing?</h3>
@@ -395,8 +421,6 @@ function LibrarySection() {
           </a>
         ))}
       </div>
-
-
     </section>
   );
 }
@@ -413,8 +437,8 @@ function About() {
             About Dr Mantri Vijaya Bhaskar
           </h2>
           <p className="mt-3 text-foreground/80">
-            Helping patients understand and manage respiratory illnesses through evidence-based care,
-            clear communication, and compassionate listening.
+            Helping patients understand and manage respiratory illnesses through evidence-based
+            care, clear communication, and compassionate listening.
           </p>
           <p className="mt-4 text-sm font-medium text-foreground">
             MBBS, DTCD, Chest Physician &amp; Family Physician
@@ -429,9 +453,9 @@ function About() {
             <span className="font-serif text-lg font-semibold">Doctor&rsquo;s Promise</span>
           </div>
           <p className="mt-2 text-sm text-foreground/80">
-            Every patient deserves to understand their illness before making treatment decisions. This
-            website is my commitment to providing simple, evidence-based and compassionate respiratory
-            health information for patients and families.
+            Every patient deserves to understand their illness before making treatment decisions.
+            This website is my commitment to providing simple, evidence-based and compassionate
+            respiratory health information for patients and families.
           </p>
           <p className="mt-3 text-sm font-medium text-foreground">— Dr Mantri Vijaya Bhaskar</p>
         </blockquote>
@@ -442,28 +466,79 @@ function About() {
 
 function Footer() {
   const actions = [
-    { icon: MessageCircle, label: "WhatsApp", sub: "Message us", href: WHATSAPP_URL },
-    { icon: MapPin, label: "Directions", sub: "Find us on map", href: MAPS_URL },
-    { icon: Phone, label: "Call", sub: "+91 98765 43210", href: CALL_URL },
-    { icon: Mail, label: "Email", sub: "hello@mantriarohaclinic.in", href: EMAIL_URL },
-    { icon: Youtube, label: "YouTube", sub: "Health talks & more", href: YOUTUBE_URL },
+    {
+      icon: (props: { className?: string }) => (
+        <svg viewBox="0 0 24 24" fill="currentColor" className={props.className} aria-hidden>
+          <path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.35 5.01L2 22l5.07-1.33A9.96 9.96 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.93 14.13c-.19.55-.98 1.02-1.36 1.08-.38.07-.72.19-2.41-.5-2.04-.8-3.35-2.91-3.45-3.05-.1-.14-.83-1.1-.83-2.1 0-1 .52-1.49.7-1.69.19-.2.42-.25.56-.25.14 0 .28 0 .4.01.13.01.3-.05.47.36.17.41.55 1.42.6 1.52.05.1.08.22.02.35-.06.13-.1.22-.19.33-.1.11-.2.22-.29.3-.1.08-.2.17-.09.34.11.17.49.82 1.05 1.33.72.65 1.33.85 1.53.95.19.09.32.08.44-.05.12-.13.51-.59.65-.79.14-.21.28-.17.47-.1.19.08 1.22.58 1.43.68.21.1.35.15.4.23.06.09.04.52-.14 1.07z" />
+        </svg>
+      ),
+      color: "#25D366",
+      label: "WhatsApp",
+      sub: "Message us",
+      href: WHATSAPP_URL,
+    },
+    {
+      icon: (props: { className?: string }) => (
+        <svg viewBox="0 0 24 24" className={props.className} aria-hidden>
+          <path
+            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+            fill="#4285F4"
+          />
+          <path d="M12 2c3.87 0 7 3.13 7 7 0 5.25-7 13-7 13V2z" fill="#34A853" />
+          <path d="M12 2c-3.87 0-7 3.13-7 7 0 5.25 7 13 7 13V2z" fill="#FBBC05" />
+          <circle cx="12" cy="9" r="2.5" fill="#EA4335" />
+        </svg>
+      ),
+      color: "transparent",
+      label: "Directions",
+      sub: "Find us on map",
+      href: MAPS_URL,
+    },
+    {
+      icon: (props: { className?: string }) => <Phone className={props.className} />,
+      color: "#0F766E",
+      label: "Call",
+      sub: "+91 98765 43210",
+      href: CALL_URL,
+    },
+    {
+      icon: (props: { className?: string }) => <Mail className={props.className} />,
+      color: "#DC2626",
+      label: "Email",
+      sub: "hello@mantriarohaclinic.in",
+      href: EMAIL_URL,
+    },
+    {
+      icon: (props: { className?: string }) => <Youtube className={props.className} />,
+      color: "#FF0000",
+      label: "YouTube",
+      sub: "Health talks & more",
+      href: YOUTUBE_URL,
+    },
   ];
   return (
     <footer id="contact" className="border-t border-border bg-card">
-      <div className="mx-auto max-w-7xl px-4 py-6 md:px-8 md:py-8">
-        <ul className="grid grid-cols-4 gap-3 md:grid-cols-5 md:gap-6">
+      <div className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-4">
+        <ul className="grid grid-cols-2 gap-2 md:grid-cols-5 md:gap-0 md:divide-x md:divide-border">
           {actions.map((a) => (
             <li key={a.label}>
               <a
                 href={a.href}
-                className="flex flex-col items-center gap-2 rounded-[10px] p-2 text-center transition-colors hover:bg-secondary md:flex-row md:text-left"
+                className="flex items-center gap-3 rounded-[10px] p-2 text-left transition-colors hover:bg-secondary md:px-4"
               >
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-secondary text-primary">
+                <span
+                  className="grid h-11 w-11 shrink-0 place-items-center rounded-full"
+                  style={
+                    a.color === "transparent"
+                      ? undefined
+                      : { backgroundColor: a.color, color: "#fff" }
+                  }
+                >
                   <a.icon className="h-6 w-6" />
                 </span>
                 <span className="min-w-0">
                   <span className="block text-sm font-semibold text-foreground">{a.label}</span>
-                  <span className="hidden truncate text-xs text-muted-foreground md:block">{a.sub}</span>
+                  <span className="block truncate text-xs text-muted-foreground">{a.sub}</span>
                 </span>
               </a>
             </li>
@@ -471,12 +546,18 @@ function Footer() {
         </ul>
       </div>
       <div className="bg-primary text-primary-foreground">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 text-xs md:flex-row md:items-center md:justify-between md:px-8">
-          <p>© {new Date().getFullYear()} Mantri Aroha Clinic. All rights reserved.</p>
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-3 text-xs md:flex-row md:items-center md:justify-between md:px-8">
+          <p>© 2024 Mantri Aroha Clinic. All rights reserved.</p>
           <div className="flex flex-wrap gap-4 opacity-90">
-            <a href="#" className="hover:underline">Privacy Policy</a>
-            <a href="#" className="hover:underline">Terms &amp; Conditions</a>
-            <a href="#" className="hover:underline">Disclaimer</a>
+            <a href="#" className="hover:underline">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:underline">
+              Terms &amp; Conditions
+            </a>
+            <a href="#" className="hover:underline">
+              Disclaimer
+            </a>
           </div>
         </div>
       </div>
