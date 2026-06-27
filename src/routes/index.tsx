@@ -169,16 +169,16 @@ function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
 function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
-      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 md:flex md:gap-6 md:px-8 md:py-4">
-        <a href="#" className="flex min-w-0 items-center gap-3">
-          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-secondary text-primary">
+      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-2 md:flex md:gap-6 md:px-8 md:py-4">
+        <a href="#" className="flex min-w-0 items-center gap-2 md:gap-3">
+          <span className="hidden h-11 w-11 shrink-0 place-items-center rounded-2xl bg-secondary text-primary md:grid">
             <LungMark className="h-6 w-6" />
           </span>
           <span className="min-w-0">
-            <span className="block truncate font-serif text-xl font-semibold leading-tight text-primary md:text-2xl">
-              Mantri Aroha
+            <span className="block truncate font-serif text-lg font-semibold leading-tight text-primary md:text-2xl">
+              Mantri Aroha Clinic
             </span>
-            <span className="block truncate text-xs italic text-muted-foreground md:text-sm">
+            <span className="block truncate text-[11px] italic text-muted-foreground md:text-sm">
               Care with Compassion
             </span>
             <span className="hidden text-[11px] text-muted-foreground md:block">
@@ -199,13 +199,13 @@ function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <Button asChild className="h-10 rounded-[10px] px-5">
+        <div className="flex items-center gap-1 md:gap-2">
+          <Button asChild className="h-9 rounded-[10px] px-3 text-xs md:h-10 md:px-5 md:text-sm">
             <a href={BOOK_HREF}>Book a visit</a>
           </Button>
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Open menu">
+              <Button variant="ghost" size="icon" className="h-9 w-9 lg:hidden" aria-label="Open menu">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
@@ -232,72 +232,107 @@ function Header() {
   );
 }
 
+function HeroVisual() {
+  return (
+    <div className="relative mx-auto aspect-[4/3] w-full max-w-sm">
+      <div className="absolute inset-0 grid place-items-center" aria-hidden>
+        <div className="h-[88%] w-[88%] rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
+      </div>
+      <div className="absolute inset-x-6 bottom-2 top-6 grid place-items-center" aria-hidden>
+        <div className="h-full w-full rounded-full border border-primary/15" />
+      </div>
+      <img
+        src={doctorTransparent.url}
+        alt="Dr Mantri Vijaya Bhaskar"
+        className="relative h-full w-full object-contain object-bottom"
+        loading="eager"
+      />
+    </div>
+  );
+}
+
 function Hero() {
   return (
     <section className="bg-secondary/60">
-      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-5 md:grid-cols-2 md:items-center md:gap-8 md:px-8 md:py-6">
-        <div className="order-2 md:order-1">
-          <div className="mb-3 flex items-center gap-2 text-primary">
-            <LungMark className="h-6 w-6" />
-            <span className="text-sm font-medium">A practice built on compassion</span>
-          </div>
-          <h1 className="font-serif text-3xl font-semibold leading-[1.1] tracking-tight text-foreground md:text-4xl lg:text-5xl">
-            Helping you breathe
-            <br className="hidden sm:block" /> better every day
-          </h1>
-          <p className="mt-4 text-sm font-medium text-foreground/80">Evidence-based care for</p>
-          <ul className="mt-1 flex flex-wrap gap-x-2 gap-y-1 text-sm text-foreground md:text-base">
-            {CONDITIONS.map((c, i) => (
-              <li key={c} className="flex items-center gap-2">
-                {i > 0 && <span className="text-primary">•</span>}
-                <span>{c}</span>
-              </li>
-            ))}
-          </ul>
+      <div className="mx-auto max-w-7xl px-4 py-4 md:px-8 md:py-6">
+        {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
+        <div className="grid grid-cols-[1fr_44%] items-start gap-3 md:grid-cols-2 md:items-center md:gap-8">
+          <div className="md:order-1">
+            <div className="flex items-center gap-2 text-primary">
+              <LungMark className="h-5 w-5 md:h-6 md:w-6" />
+              <span className="text-xs font-medium md:text-sm">A practice built on compassion</span>
+            </div>
+            <h1 className="mt-3 font-serif text-[26px] font-semibold leading-[1.05] tracking-tight text-foreground md:mt-4 md:text-4xl lg:text-5xl">
+              Helping you breathe better every day
+            </h1>
+            <p className="mt-3 text-[13px] font-medium text-foreground/80 md:mt-4 md:text-sm">
+              Evidence-based care for
+            </p>
+            <ul className="mt-1 flex flex-wrap gap-x-2 gap-y-1 text-[13px] text-foreground md:text-base">
+              {CONDITIONS.map((c, i) => (
+                <li key={c} className="flex items-center gap-2">
+                  {i > 0 && <span className="text-primary">•</span>}
+                  <span>{c}</span>
+                </li>
+              ))}
+            </ul>
 
-          <div className="mt-5 flex flex-col gap-2 sm:flex-row">
-            <Button asChild size="lg" className="h-12 rounded-[10px] px-5">
-              <a href={BOOK_HREF}>
-                <Video className="mr-2 h-4 w-4" />
-                <span className="flex flex-col items-start leading-tight">
-                  <span className="text-sm font-semibold">Online Consultation</span>
-                  <span className="text-[11px] opacity-90">ఆన్‌లైన్ సంప్రదింపులు</span>
-                </span>
-              </a>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="h-12 rounded-[10px] border-primary px-5 text-primary hover:bg-secondary"
-            >
-              <a href={BOOK_HREF}>
-                <Stethoscope className="mr-2 h-4 w-4" />
-                <span className="flex flex-col items-start leading-tight">
-                  <span className="text-sm font-semibold">Book Clinic Visit</span>
-                  <span className="text-[11px] opacity-90">క్లినిక్‌లో సంప్రదింపులు</span>
-                </span>
-              </a>
-            </Button>
+            <div className="mt-4 hidden flex-col gap-2 sm:flex sm:flex-row md:mt-5">
+              <Button asChild size="lg" className="h-12 rounded-[10px] px-5">
+                <a href={BOOK_HREF}>
+                  <Video className="mr-2 h-4 w-4" />
+                  <span className="flex flex-col items-start leading-tight">
+                    <span className="text-sm font-semibold">Online Consultation</span>
+                    <span className="text-[11px] opacity-90">ఆన్‌లైన్ సంప్రదింపులు</span>
+                  </span>
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="h-12 rounded-[10px] border-primary px-5 text-primary hover:bg-secondary"
+              >
+                <a href={BOOK_HREF}>
+                  <Stethoscope className="mr-2 h-4 w-4" />
+                  <span className="flex flex-col items-start leading-tight">
+                    <span className="text-sm font-semibold">Book Clinic Visit</span>
+                    <span className="text-[11px] opacity-90">క్లినిక్‌లో సంప్రదింపులు</span>
+                  </span>
+                </a>
+              </Button>
+            </div>
+          </div>
+
+          <div className="md:order-2">
+            <HeroVisual />
           </div>
         </div>
 
-        <div className="order-1 md:order-2">
-          <div className="relative mx-auto aspect-[4/3] w-full max-w-sm">
-            {/* Soft circular backdrop pattern */}
-            <div className="absolute inset-0 grid place-items-center" aria-hidden>
-              <div className="h-[88%] w-[88%] rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
-            </div>
-            <div className="absolute inset-x-6 bottom-2 top-6 grid place-items-center" aria-hidden>
-              <div className="h-full w-full rounded-full border border-primary/15" />
-            </div>
-            <img
-              src={doctorTransparent.url}
-              alt="Dr Mantri Vijaya Bhaskar"
-              className="relative h-full w-full object-contain object-bottom"
-              loading="eager"
-            />
-          </div>
+        {/* Mobile-only stacked CTAs below */}
+        <div className="mt-4 flex flex-col gap-2 sm:hidden">
+          <Button asChild className="h-12 rounded-[10px] px-4">
+            <a href={BOOK_HREF}>
+              <Video className="mr-2 h-4 w-4" />
+              <span className="flex flex-col items-start leading-tight">
+                <span className="text-sm font-semibold">Online Consultation</span>
+                <span className="text-[11px] opacity-90">ఆన్‌లైన్ సంప్రదింపులు</span>
+              </span>
+            </a>
+          </Button>
+          <Button
+            asChild
+            variant="outline"
+            className="h-12 rounded-[10px] border-primary px-4 text-primary hover:bg-secondary"
+          >
+            <a href={BOOK_HREF}>
+              <Stethoscope className="mr-2 h-4 w-4" />
+              <span className="flex flex-col items-start leading-tight">
+                <span className="text-sm font-semibold">Book Clinic Visit</span>
+                <span className="text-[11px] opacity-90">క్లినిక్‌లో సంప్రదింపులు</span>
+              </span>
+            </a>
+          </Button>
         </div>
       </div>
     </section>
@@ -306,15 +341,18 @@ function Hero() {
 
 function TrustStrip() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-4">
-      <div className="rounded-[10px] border border-border bg-card p-5 shadow-sm md:p-6">
-        <ul className="grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-0 md:divide-x md:divide-border">
+    <section className="mx-auto max-w-7xl px-3 py-3 md:px-8 md:py-4">
+      <div className="rounded-[10px] border border-border bg-card p-3 shadow-sm md:p-6">
+        <ul className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-0 md:divide-x md:divide-border">
           {TRUST.map((t) => (
-            <li key={t.label} className="flex items-center justify-center gap-4 md:px-6">
-              <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-secondary/60 ring-1 ring-primary/15 overflow-hidden">
-                <img src={t.img} alt="" className="h-12 w-12 object-contain" loading="lazy" />
+            <li
+              key={t.label}
+              className="flex items-center justify-start gap-2 md:justify-center md:gap-4 md:px-6"
+            >
+              <span className="grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-full bg-secondary/60 ring-1 ring-primary/15 md:h-14 md:w-14">
+                <img src={t.img} alt="" className="h-9 w-9 object-contain md:h-12 md:w-12" loading="lazy" />
               </span>
-              <span className="min-w-0 text-[15px] leading-tight text-foreground">
+              <span className="min-w-0 text-[11px] leading-tight text-foreground md:text-[15px]">
                 <span className="block font-medium">{t.label}</span>
                 <span className="block font-medium">{t.sub}</span>
               </span>
@@ -329,14 +367,14 @@ function TrustStrip() {
 function Services() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   return (
-    <section id="services" className="mx-auto max-w-7xl px-4 pb-8 md:px-8 md:pb-10">
-      <div className="grid gap-5 lg:grid-cols-[1fr_1fr_1fr_300px] lg:gap-5">
+    <section id="services" className="mx-auto max-w-7xl px-3 pb-6 md:px-8 md:pb-10">
+      <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_300px] lg:gap-5">
         {SERVICES.map((s) => (
           <Card
             key={s.title}
-            className="flex flex-row gap-4 overflow-hidden rounded-[12px] border-border p-4 shadow-sm"
+            className="flex flex-col gap-3 overflow-hidden rounded-[12px] border-border p-3 shadow-sm sm:p-4 lg:flex-row lg:gap-4"
           >
-            <div className="w-[42%] shrink-0 overflow-hidden rounded-[10px] bg-secondary/40">
+            <div className="h-36 w-full shrink-0 overflow-hidden rounded-[10px] bg-secondary/40 sm:h-40 lg:h-auto lg:w-[42%]">
               <img
                 src={s.image}
                 alt={s.title}
@@ -344,21 +382,21 @@ function Services() {
                 loading="lazy"
               />
             </div>
-            <div className="flex min-w-0 flex-1 flex-col">
-              <h3 className="font-serif text-lg font-semibold leading-tight text-primary">
+            <div className="flex min-w-0 flex-1 flex-col items-center text-center lg:items-start lg:text-left">
+              <h3 className="font-serif text-base font-semibold leading-tight text-primary sm:text-lg">
                 {s.title}
               </h3>
               {s.titleSub && (
                 <p className="mt-0.5 text-[11px] leading-snug text-primary/80">{s.titleSub}</p>
               )}
-              <p className="mt-1 text-[13px] leading-snug text-foreground/80">{s.titleTe}</p>
-              <p className="mt-2 text-[13px] leading-snug text-muted-foreground">{s.desc}</p>
+              <p className="mt-1 text-[12px] leading-snug text-foreground/80 sm:text-[13px]">{s.titleTe}</p>
               <Button
                 asChild
-                className="mt-auto h-10 self-start rounded-[10px] px-5 text-[11px] font-semibold tracking-[0.14em]"
+                className="mt-2 h-9 rounded-[10px] px-5 text-[11px] font-semibold tracking-[0.14em] lg:mt-2 lg:self-start"
               >
                 <a href={BOOK_HREF}>BOOK NOW</a>
               </Button>
+              <p className="mt-2 text-[12px] leading-snug text-muted-foreground sm:text-[13px] lg:mt-2">{s.desc}</p>
             </div>
           </Card>
         ))}
@@ -517,35 +555,45 @@ function Footer() {
     },
   ];
   return (
-    <footer id="contact" className="border-t border-border bg-card">
-      <div className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-4">
-        <ul className="grid grid-cols-2 gap-2 md:grid-cols-5 md:gap-0 md:divide-x md:divide-border">
+    <footer
+      id="contact"
+      className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card shadow-[0_-4px_12px_rgba(0,0,0,0.06)] md:static md:shadow-none"
+    >
+      <div className="mx-auto max-w-7xl px-2 py-2 md:px-8 md:py-4">
+        <ul className="grid grid-cols-4 gap-1 md:grid-cols-5 md:gap-0 md:divide-x md:divide-border">
           {actions.map((a) => (
-            <li key={a.label}>
+            <li
+              key={a.label}
+              className={a.label === "Email" ? "hidden md:list-item" : ""}
+            >
               <a
                 href={a.href}
-                className="flex items-center gap-3 rounded-[10px] p-2 text-left transition-colors hover:bg-secondary md:px-4"
+                className="flex flex-col items-center gap-1 rounded-[10px] p-1 text-center transition-colors hover:bg-secondary md:flex-row md:gap-3 md:p-2 md:px-4 md:text-left"
               >
                 <span
-                  className="grid h-11 w-11 shrink-0 place-items-center rounded-full"
+                  className="grid h-9 w-9 shrink-0 place-items-center rounded-full md:h-11 md:w-11"
                   style={
                     a.color === "transparent"
                       ? undefined
                       : { backgroundColor: a.color, color: "#fff" }
                   }
                 >
-                  <a.icon className="h-6 w-6" />
+                  <a.icon className="h-5 w-5 md:h-6 md:w-6" />
                 </span>
                 <span className="min-w-0">
-                  <span className="block text-sm font-semibold text-foreground">{a.label}</span>
-                  <span className="block truncate text-xs text-muted-foreground">{a.sub}</span>
+                  <span className="block text-[11px] font-semibold leading-tight text-foreground md:text-sm">
+                    {a.label}
+                  </span>
+                  <span className="hidden truncate text-xs text-muted-foreground md:block">
+                    {a.sub}
+                  </span>
                 </span>
               </a>
             </li>
           ))}
         </ul>
       </div>
-      <div className="bg-primary text-primary-foreground">
+      <div className="hidden bg-primary text-primary-foreground md:block">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-3 text-xs md:flex-row md:items-center md:justify-between md:px-8">
           <p>© 2024 Mantri Aroha Clinic. All rights reserved.</p>
           <div className="flex flex-wrap gap-4 opacity-90">
@@ -569,7 +617,7 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <Header />
-      <main>
+      <main className="pb-24 md:pb-0">
         <Hero />
         <TrustStrip />
         <Services />
