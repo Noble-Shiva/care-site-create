@@ -367,14 +367,14 @@ function TrustStrip() {
 function Services() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   return (
-    <section id="services" className="mx-auto max-w-7xl px-4 pb-8 md:px-8 md:pb-10">
-      <div className="grid gap-5 lg:grid-cols-[1fr_1fr_1fr_300px] lg:gap-5">
+    <section id="services" className="mx-auto max-w-7xl px-3 pb-6 md:px-8 md:pb-10">
+      <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_300px] lg:gap-5">
         {SERVICES.map((s) => (
           <Card
             key={s.title}
-            className="flex flex-row gap-4 overflow-hidden rounded-[12px] border-border p-4 shadow-sm"
+            className="flex flex-col gap-3 overflow-hidden rounded-[12px] border-border p-3 shadow-sm sm:p-4 lg:flex-row lg:gap-4"
           >
-            <div className="w-[42%] shrink-0 overflow-hidden rounded-[10px] bg-secondary/40">
+            <div className="h-36 w-full shrink-0 overflow-hidden rounded-[10px] bg-secondary/40 sm:h-40 lg:h-auto lg:w-[42%]">
               <img
                 src={s.image}
                 alt={s.title}
@@ -382,21 +382,21 @@ function Services() {
                 loading="lazy"
               />
             </div>
-            <div className="flex min-w-0 flex-1 flex-col">
-              <h3 className="font-serif text-lg font-semibold leading-tight text-primary">
+            <div className="flex min-w-0 flex-1 flex-col items-center text-center lg:items-start lg:text-left">
+              <h3 className="font-serif text-base font-semibold leading-tight text-primary sm:text-lg">
                 {s.title}
               </h3>
               {s.titleSub && (
                 <p className="mt-0.5 text-[11px] leading-snug text-primary/80">{s.titleSub}</p>
               )}
-              <p className="mt-1 text-[13px] leading-snug text-foreground/80">{s.titleTe}</p>
-              <p className="mt-2 text-[13px] leading-snug text-muted-foreground">{s.desc}</p>
+              <p className="mt-1 text-[12px] leading-snug text-foreground/80 sm:text-[13px]">{s.titleTe}</p>
               <Button
                 asChild
-                className="mt-auto h-10 self-start rounded-[10px] px-5 text-[11px] font-semibold tracking-[0.14em]"
+                className="mt-2 h-9 rounded-[10px] px-5 text-[11px] font-semibold tracking-[0.14em] lg:mt-2 lg:self-start"
               >
                 <a href={BOOK_HREF}>BOOK NOW</a>
               </Button>
+              <p className="mt-2 text-[12px] leading-snug text-muted-foreground sm:text-[13px] lg:mt-2">{s.desc}</p>
             </div>
           </Card>
         ))}
