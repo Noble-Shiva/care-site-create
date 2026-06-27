@@ -169,16 +169,16 @@ function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
 function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
-      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 md:flex md:gap-6 md:px-8 md:py-4">
-        <a href="#" className="flex min-w-0 items-center gap-3">
-          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-secondary text-primary">
+      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-2 md:flex md:gap-6 md:px-8 md:py-4">
+        <a href="#" className="flex min-w-0 items-center gap-2 md:gap-3">
+          <span className="hidden h-11 w-11 shrink-0 place-items-center rounded-2xl bg-secondary text-primary md:grid">
             <LungMark className="h-6 w-6" />
           </span>
           <span className="min-w-0">
-            <span className="block truncate font-serif text-xl font-semibold leading-tight text-primary md:text-2xl">
-              Mantri Aroha
+            <span className="block truncate font-serif text-lg font-semibold leading-tight text-primary md:text-2xl">
+              Mantri Aroha Clinic
             </span>
-            <span className="block truncate text-xs italic text-muted-foreground md:text-sm">
+            <span className="block truncate text-[11px] italic text-muted-foreground md:text-sm">
               Care with Compassion
             </span>
             <span className="hidden text-[11px] text-muted-foreground md:block">
@@ -199,13 +199,13 @@ function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <Button asChild className="h-10 rounded-[10px] px-5">
+        <div className="flex items-center gap-1 md:gap-2">
+          <Button asChild className="h-9 rounded-[10px] px-3 text-xs md:h-10 md:px-5 md:text-sm">
             <a href={BOOK_HREF}>Book a visit</a>
           </Button>
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Open menu">
+              <Button variant="ghost" size="icon" className="h-9 w-9 lg:hidden" aria-label="Open menu">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
