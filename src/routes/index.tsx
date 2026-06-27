@@ -234,17 +234,17 @@ function Header() {
 
 function HeroVisual() {
   return (
-    <div className="relative mx-auto aspect-[4/3] w-full max-w-sm">
+    <div className="relative mx-auto aspect-[3/4] w-full max-w-sm sm:aspect-[4/3]">
       <div className="absolute inset-0 grid place-items-center" aria-hidden>
-        <div className="h-[88%] w-[88%] rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
+        <div className="h-[92%] w-[92%] rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
       </div>
-      <div className="absolute inset-x-6 bottom-2 top-6 grid place-items-center" aria-hidden>
+      <div className="absolute inset-2 grid place-items-center" aria-hidden>
         <div className="h-full w-full rounded-full border border-primary/15" />
       </div>
       <img
         src={doctorTransparent.url}
         alt="Dr Mantri Vijaya Bhaskar"
-        className="relative h-full w-full object-contain object-bottom"
+        className="relative h-full w-full object-contain object-center"
         loading="eager"
       />
     </div>
