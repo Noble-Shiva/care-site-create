@@ -479,7 +479,7 @@ function HomePage() {
         <Hero />
         <TrustStrip />
         <Services />
-        <LibraryAndSymptoms />
+        <LibrarySection />
         <About />
       </main>
       <Footer />
