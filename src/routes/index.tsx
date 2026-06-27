@@ -98,7 +98,7 @@ const SERVICES = [
   },
   {
     image: serviceClinic.url,
-    imageClass: "object-cover",
+    imageClass: "object-contain",
     title: "In-Clinic Consultation",
     titleTe: "క్లినిక్‌లో సంప్రదింపులు",
     desc: "Personalized evaluation and treatment with advanced diagnostic facilities.",
