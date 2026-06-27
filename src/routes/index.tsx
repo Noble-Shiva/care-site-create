@@ -328,32 +328,41 @@ function Services() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   return (
     <section id="services" className="mx-auto max-w-7xl px-4 pb-8 md:px-8 md:pb-10">
-      <div className="grid gap-5 lg:grid-cols-[1fr_1fr_1fr_320px] lg:gap-6">
+      <div className="grid gap-5 lg:grid-cols-[1fr_1fr_1fr_300px] lg:gap-5">
         {SERVICES.map((s) => (
           <Card
             key={s.title}
-            className="flex flex-col gap-4 rounded-[12px] border-border p-5 shadow-sm"
+            className="flex flex-row gap-4 overflow-hidden rounded-[12px] border-border p-4 shadow-sm"
           >
-            <div className="grid gap-4 sm:grid-cols-[140px_1fr] lg:grid-cols-1">
-              <ServiceIllustration Icon={s.icon} />
-              <div className="flex flex-col">
-                <h3 className="font-serif text-xl font-semibold text-primary md:text-2xl">
-                  {s.title}
-                  {s.titleSub && (
-                    <span className="mt-0.5 block text-xs font-normal text-muted-foreground">
-                      {s.titleSub}
-                    </span>
-                  )}
-                </h3>
-                <p className="mt-1 text-sm text-foreground/80">{s.titleTe}</p>
-                <Button asChild className="mt-3 h-11 rounded-[10px] text-xs font-semibold tracking-[0.12em]">
-                  <a href={BOOK_HREF}>BOOK NOW</a>
-                </Button>
-              </div>
+            <div className="w-[42%] shrink-0 overflow-hidden rounded-[10px] bg-secondary/40">
+              <img
+                src={s.image}
+                alt={s.title}
+                className={`h-full w-full ${s.imageClass}`}
+                loading="lazy"
+              />
             </div>
-            <p className="text-sm text-muted-foreground">{s.desc}</p>
+            <div className="flex min-w-0 flex-1 flex-col">
+              <h3 className="font-serif text-lg font-semibold leading-tight text-primary">
+                {s.title}
+              </h3>
+              {s.titleSub && (
+                <p className="mt-0.5 text-[11px] leading-snug text-primary/80">
+                  {s.titleSub}
+                </p>
+              )}
+              <p className="mt-1 text-[13px] leading-snug text-foreground/80">{s.titleTe}</p>
+              <p className="mt-2 text-[13px] leading-snug text-muted-foreground">{s.desc}</p>
+              <Button
+                asChild
+                className="mt-auto h-10 self-start rounded-[10px] px-5 text-[11px] font-semibold tracking-[0.14em]"
+              >
+                <a href={BOOK_HREF}>BOOK NOW</a>
+              </Button>
+            </div>
           </Card>
         ))}
+
 
         <Card className="relative flex flex-col overflow-hidden rounded-[12px] border-border bg-secondary/60 p-6 shadow-sm">
           <h3 className="font-serif text-xl font-semibold text-primary">Are you experiencing?</h3>
