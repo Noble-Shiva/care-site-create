@@ -378,9 +378,9 @@ function Services() {
         {SERVICES.map((s) => (
           <Card
             key={s.title}
-            className="flex w-[70vw] min-w-[240px] shrink-0 flex-col gap-3 overflow-hidden rounded-[12px] border-border p-3 shadow-sm sm:w-auto sm:min-w-0 sm:p-4 lg:flex-row lg:gap-4"
+            className="flex w-[40vw] min-w-[150px] shrink-0 flex-col gap-2 overflow-hidden rounded-[12px] border-border p-2 shadow-sm sm:w-auto sm:min-w-0 sm:gap-3 sm:p-4 lg:flex-row lg:gap-4"
           >
-            <div className="h-32 w-full shrink-0 overflow-hidden rounded-[10px] bg-secondary/40 sm:h-40 lg:h-auto lg:w-[42%]">
+            <div className="h-24 w-full shrink-0 overflow-hidden rounded-[10px] bg-secondary/40 sm:h-40 lg:h-auto lg:w-[42%]">
               <img
                 src={s.image}
                 alt={s.title}
@@ -390,18 +390,18 @@ function Services() {
             </div>
             <div className="flex min-w-0 flex-1 flex-col justify-between items-center text-center lg:items-start lg:text-left">
               <div>
-                <h3 className="font-serif text-base font-semibold leading-tight text-primary sm:text-lg">
+                <h3 className="font-serif text-sm font-semibold leading-tight text-primary sm:text-lg">
                   {s.title}
                 </h3>
                 {s.titleSub && (
-                  <p className="mt-0.5 text-[11px] leading-snug text-primary/80">{s.titleSub}</p>
+                  <p className="mt-0.5 text-[10px] leading-snug text-primary/80 sm:text-[11px]">{s.titleSub}</p>
                 )}
-                <p className="mt-1 text-[12px] leading-snug text-foreground/80 sm:text-[13px]">{s.titleTe}</p>
-                <p className="mt-2 text-[12px] leading-snug text-muted-foreground sm:text-[13px]">{s.desc}</p>
+                <p className="mt-1 text-[11px] leading-snug text-foreground/80 sm:text-[13px]">{s.titleTe}</p>
+                <p className="mt-2 text-[11px] leading-snug text-muted-foreground sm:text-[13px]">{s.desc}</p>
               </div>
               <Button
                 asChild
-                className="mt-3 h-9 rounded-[10px] px-5 text-[11px] font-semibold tracking-[0.14em] lg:mt-2 lg:self-start"
+                className="mt-2 h-8 rounded-[10px] px-3 text-[10px] font-semibold tracking-[0.14em] sm:mt-3 sm:h-9 sm:px-5 sm:text-[11px] lg:mt-2 lg:self-start"
               >
                 <a href={BOOK_HREF}>BOOK NOW</a>
               </Button>
