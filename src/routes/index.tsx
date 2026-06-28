@@ -35,6 +35,9 @@ import iconQuitSmoking from "@/assets/icon-quit-smoking.png.asset.json";
 import serviceOnline from "@/assets/service-online-v2.png.asset.json";
 import serviceClinic from "@/assets/service-clinic-v2.png.asset.json";
 import servicePft from "@/assets/service-pft.png.asset.json";
+import serviceOnlineDesktop from "@/assets/service-online-desktop.png.asset.json";
+import serviceClinicDesktop from "@/assets/service-clinic-desktop.png.asset.json";
+import servicePftDesktop from "@/assets/service-pft-desktop.png.asset.json";
 import libAsthma from "@/assets/lib-asthma.png.asset.json";
 import libCopd from "@/assets/lib-copd.png.asset.json";
 import libCough from "@/assets/lib-cough.png.asset.json";
@@ -112,21 +115,27 @@ const TRUST = [
 const SERVICES = [
   {
     image: serviceOnline.url,
+    imageDesktop: serviceOnlineDesktop.url,
     imageClass: "object-contain",
+    imageDesktopClass: "object-cover",
     title: "Online Consultation",
     titleTe: "ఆన్‌లైన్ సంప్రదింపులు",
     desc: "Get expert advice from the comfort of your home.",
   },
   {
     image: serviceClinic.url,
+    imageDesktop: serviceClinicDesktop.url,
     imageClass: "object-contain",
+    imageDesktopClass: "object-cover",
     title: "In-Clinic Consultation",
     titleTe: "క్లినిక్‌లో సంప్రదింపులు",
     desc: "Personalized evaluation and treatment with advanced diagnostic facilities.",
   },
   {
     image: servicePft.url,
+    imageDesktop: servicePftDesktop.url,
     imageClass: "object-cover",
+    imageDesktopClass: "object-cover",
     title: "PFT",
     titleSub: "(Pulmonary Function Test / Spirometry)",
     titleTe: "ఊపిరితిత్తుల పనితీరును పరీక్షించే విధానం",
@@ -386,7 +395,13 @@ function Services() {
               <img
                 src={s.image}
                 alt={s.title}
-                className={`h-full w-full ${s.imageClass}`}
+                className={`h-full w-full sm:hidden ${s.imageClass}`}
+                loading="lazy"
+              />
+              <img
+                src={s.imageDesktop}
+                alt={s.title}
+                className={`hidden h-full w-full sm:block ${s.imageDesktopClass}`}
                 loading="lazy"
               />
             </div>
