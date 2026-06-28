@@ -484,9 +484,9 @@ function LibrarySection() {
           <a
             key={l.label}
             href="#library"
-            className="flex items-center gap-3 rounded-[12px] border border-border bg-card p-2 text-[13px] font-semibold leading-snug text-primary transition-colors hover:border-primary hover:bg-secondary md:shrink-0 md:gap-2 md:p-2 md:text-sm"
+            className="flex items-center gap-3 rounded-[12px] border border-border bg-card p-2 text-[13px] font-semibold leading-snug text-primary transition-colors hover:border-primary hover:bg-secondary md:shrink-0 md:gap-2 md:p-2 md:text-sm md:w-40"
           >
-            <img src={l.img} alt="" className="h-10 w-10 shrink-0 object-contain md:h-12 md:w-12" loading="lazy" />
+            <img src={l.img} alt="" className="h-10 w-10 shrink-0 object-contain md:h-10 md:w-10" loading="lazy" />
             <span>{l.label}</span>
           </a>
         ))}
