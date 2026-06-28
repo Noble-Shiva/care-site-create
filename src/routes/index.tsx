@@ -385,7 +385,7 @@ function Services() {
   return (
     <section id="services" className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-6">
       <h2 className="sr-only">Our Services</h2>
-      <div className="flex gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-[1fr_1fr_1fr_300px] lg:gap-5">
+      <div className="flex gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-[1fr_1fr_1fr_180px] lg:gap-4">
         {SERVICES.map((s) => (
           <Card
             key={s.title}
