@@ -153,13 +153,19 @@ const SERVICES = [
 ];
 
 const LIBRARY = [
-  { img: libAsthma.url, label: "What is Asthma?" },
-  { img: libCopd.url, label: "What is COPD?" },
-  { img: libCough.url, label: "Chronic Cough" },
-  { img: libAllergy.url, label: "Allergy & Breathing Problems" },
-  { img: libSmoking.url, label: "Quit Smoking" },
-  { img: libPft.url, label: "Pulmonary Function Test" },
+  { img: libCopd.url, label: "COPD" },
+  { img: libAsthma.url, label: "Asthma" },
+  { img: libCough.url, label: "Cough" },
+  { img: libAllergy.url, label: "Allergy" },
+  { img: libAsthma.url, label: "COPD & Asthma" },
+  { img: libSmoking.url, label: "Smoking" },
+  { img: iconLungs.url, label: "Pollution" },
+  { img: libPft.url, label: "PFT" },
+  { img: iconLungs.url, label: "Healthy Lungs" },
+  { img: iconFamily.url, label: "Family Doctor" },
+  { img: iconLungs.url, label: "Chest Specialist" },
 ];
+
 
 const SYMPTOMS = [
   "Persistent cough",
@@ -461,27 +467,26 @@ function Services() {
 
 function LibrarySection() {
   return (
-    <section id="library" className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-6">
-      <div className="mb-3 flex items-end justify-between gap-4 md:mb-4">
-
-        <h2 className="font-serif text-2xl font-semibold text-primary md:text-3xl">
+    <section id="library" className="mx-auto max-w-7xl px-4 py-2 md:px-8 md:py-3">
+      <div className="mb-2 flex items-end justify-between gap-3 md:mb-3">
+        <h2 className="font-serif text-[26px] font-semibold leading-tight text-primary md:text-3xl">
           Lung Health Library
         </h2>
         <a
           href="#library"
-          className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+          className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline md:text-sm"
         >
           View all articles <ArrowRight className="h-4 w-4" />
         </a>
       </div>
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+      <div className="grid grid-cols-2 gap-2 md:flex md:gap-3 md:overflow-x-auto md:pb-2 md:[scrollbar-width:none] md:[&::-webkit-scrollbar]:hidden">
         {LIBRARY.map((l) => (
           <a
             key={l.label}
             href="#library"
-            className="flex items-center gap-4 rounded-[12px] border border-border bg-card p-4 text-[14px] font-semibold leading-snug text-primary transition-colors hover:border-primary hover:bg-secondary"
+            className="flex items-center gap-3 rounded-[12px] border border-border bg-card p-2 text-[13px] font-semibold leading-snug text-primary transition-colors hover:border-primary hover:bg-secondary md:shrink-0 md:gap-2 md:p-2 md:text-sm md:w-40"
           >
-            <img src={l.img} alt="" className="h-12 w-12 shrink-0 object-contain" loading="lazy" />
+            <img src={l.img} alt="" className="h-10 w-10 shrink-0 object-contain md:h-10 md:w-10" loading="lazy" />
             <span>{l.label}</span>
           </a>
         ))}
@@ -489,6 +494,7 @@ function LibrarySection() {
     </section>
   );
 }
+
 
 function About() {
   return (
