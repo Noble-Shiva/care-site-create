@@ -395,7 +395,13 @@ function Services() {
               <img
                 src={s.image}
                 alt={s.title}
-                className={`h-full w-full ${s.imageClass}`}
+                className={`h-full w-full sm:hidden ${s.imageClass}`}
+                loading="lazy"
+              />
+              <img
+                src={s.imageDesktop}
+                alt={s.title}
+                className={`hidden h-full w-full sm:block ${s.imageDesktopClass}`}
                 loading="lazy"
               />
             </div>
