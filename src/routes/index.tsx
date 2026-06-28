@@ -211,7 +211,7 @@ function Header() {
           <img
             src={logoFull.url}
             alt="Mantri Aroha Clinic"
-            className="h-[72px] w-auto shrink-0 md:h-24"
+            className="h-[50px] w-auto shrink-0 md:h-24"
             loading="eager"
           />
           <span className="min-w-0">
@@ -240,12 +240,12 @@ function Header() {
         </nav>
 
         <div className="flex items-center gap-1 md:gap-2">
-          <Button asChild className="h-9 rounded-[10px] px-3 text-xs md:h-10 md:px-5 md:text-sm">
+          <Button asChild className="h-8 rounded-[10px] px-3 text-xs md:h-10 md:px-5 md:text-sm">
             <a href={BOOK_HREF}>Book a visit</a>
           </Button>
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="h-9 w-9 lg:hidden" aria-label="Open menu">
+              <Button variant="ghost" size="icon" className="h-8 w-8 lg:hidden" aria-label="Open menu">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
