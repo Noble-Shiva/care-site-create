@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   Activity,
-  CalendarCheck,
   ClipboardList,
   Leaf,
   MapPin,
@@ -385,11 +384,11 @@ function Services() {
   return (
     <section id="services" className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-6">
       <h2 className="sr-only">Our Services</h2>
-      <div className="flex gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-[1fr_1fr_1fr_180px] lg:gap-4">
-        {SERVICES.map((s) => (
+<div className="flex gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-[1fr_1fr_1fr_180px] lg:gap-4">
+        {SERVICES.map((s, i) => (
           <Card
             key={s.title}
-            className="flex w-[40vw] min-w-[150px] shrink-0 flex-col gap-2 overflow-hidden rounded-[12px] border-border p-2 shadow-sm sm:w-auto sm:min-w-0 sm:gap-3 sm:p-4 lg:flex-row lg:gap-4"
+            className={`flex w-[40vw] min-w-[150px] shrink-0 flex-col gap-2 overflow-hidden rounded-[12px] border-border p-2 shadow-sm sm:w-auto sm:min-w-0 sm:gap-3 sm:p-4 lg:flex-row ${i < 3 ? "lg:p-2" : ""}`}
           >
             <div className="h-24 w-full shrink-0 overflow-hidden rounded-[10px] bg-secondary/40 sm:h-40 lg:h-auto lg:w-[42%]">
               <img
@@ -443,11 +442,8 @@ function Services() {
               </li>
             ))}
           </ul>
-          <Button asChild className="mt-auto h-8 w-full rounded-[10px] text-[11px] sm:h-9 sm:text-xs">
-            <a href={BOOK_HREF}>
-              <CalendarCheck className="mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
-              Book a consultation
-            </a>
+<Button asChild className="mt-auto h-8 w-full rounded-[10px] text-[11px] sm:h-9 sm:text-xs">
+            <a href={BOOK_HREF}>Book a consultation</a>
           </Button>
           <Leaf className="pointer-events-none absolute -bottom-3 -right-3 h-20 w-20 rotate-12 text-primary/15" />
         </Card>
