@@ -91,6 +91,7 @@ const CALL_URL = "tel:+919876543210";
 const EMAIL_URL = "mailto:hello@mantriarohaclinic.in";
 const MAPS_URL = "https://maps.google.com/?q=Mantri+Aroha+Clinic";
 const YOUTUBE_URL = "#";
+const TELEGRAM_URL = "https://t.me/mantriarohaclinic";
 const BOOK_HREF = "#book";
 
 const NAV = [
