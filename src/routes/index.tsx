@@ -26,7 +26,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import doctorPhoto from "@/assets/doctor_image.png.asset.json";
 import doctorTransparent from "@/assets/doctor_transparent.png.asset.json";
-import logoFull from "@/assets/mantri-aroha-logo-transparent.png.asset.json";
+import logoFull from "@/assets/logo-full.png.asset.json";
 import iconLungs from "@/assets/icon-lungs.png.asset.json";
 import contactWhatsapp from "@/assets/contact-whatsapp.png.asset.json";
 import contactCall from "@/assets/contact-call.png.asset.json";
@@ -232,12 +232,12 @@ function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
 function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
-      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-4 py-1 md:gap-6 md:px-8 md:py-3">
-        <a href="#" className="flex min-w-0 items-center gap-2 md:gap-3">
+      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-0 md:flex md:gap-6 md:px-8 md:py-2">
+        <a href="#" className="flex min-w-0 items-center gap-1 md:gap-2">
           <img
             src={logoFull.url}
             alt="Mantri Aroha Clinic"
-            className="h-[72px] w-auto shrink-0 my-1 md:my-2"
+            className="h-[72px] w-auto shrink-0"
             loading="eager"
           />
           <span className="min-w-0">
