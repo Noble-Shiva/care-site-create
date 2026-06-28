@@ -442,11 +442,8 @@ function Services() {
               </li>
             ))}
           </ul>
-          <Button asChild className="mt-auto h-8 w-full rounded-[10px] text-[11px] sm:h-9 sm:text-xs">
-            <a href={BOOK_HREF}>
-              <CalendarCheck className="mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
-              Book a consultation
-            </a>
+<Button asChild className="mt-auto h-8 w-full rounded-[10px] text-[11px] sm:h-9 sm:text-xs">
+            <a href={BOOK_HREF}>Book a consultation</a>
           </Button>
           <Leaf className="pointer-events-none absolute -bottom-3 -right-3 h-20 w-20 rotate-12 text-primary/15" />
         </Card>
