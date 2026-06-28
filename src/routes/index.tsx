@@ -368,14 +368,12 @@ function TrustStrip() {
               key={t.label}
               className="flex shrink-0 items-center gap-2 md:shrink md:justify-center md:gap-4 md:px-6"
             >
-              <span className="grid h-8 w-8 shrink-0 place-items-center overflow-hidden rounded-full bg-secondary/60 ring-1 ring-primary/15 md:h-14 md:w-14">
-                <img
-                  src={t.img}
-                  alt=""
-                  className="h-7 w-7 object-contain md:h-12 md:w-12"
-                  loading="lazy"
-                />
-              </span>
+              <img
+                src={t.img}
+                alt=""
+                className="h-7 w-7 shrink-0 object-contain md:h-12 md:w-12"
+                loading="lazy"
+              />
               <span className="min-w-0 whitespace-nowrap text-[10px] leading-tight text-foreground md:whitespace-normal md:text-[15px]">
                 <span className="block font-medium">{t.label}</span>
                 <span className="block font-medium">{t.sub}</span>
@@ -483,9 +481,7 @@ function LibrarySection() {
             href="#library"
             className="flex items-center gap-4 rounded-[12px] border border-border bg-card p-4 text-[14px] font-semibold leading-snug text-primary transition-colors hover:border-primary hover:bg-secondary"
           >
-            <span className="grid h-14 w-14 shrink-0 place-items-center overflow-hidden rounded-full bg-secondary/60 ring-1 ring-primary/15">
-              <img src={l.img} alt="" className="h-12 w-12 object-contain" loading="lazy" />
-            </span>
+            <img src={l.img} alt="" className="h-12 w-12 shrink-0 object-contain" loading="lazy" />
             <span>{l.label}</span>
           </a>
         ))}
