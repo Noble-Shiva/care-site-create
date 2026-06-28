@@ -274,11 +274,12 @@ function Header() {
 
 function HeroVisual() {
   return (
-    <div className="relative mx-auto aspect-[3/4] w-full max-w-sm sm:aspect-[4/3]">
-      <div className="absolute inset-0 grid place-items-center" aria-hidden>
+    <div className="relative mx-auto aspect-[2/3] w-full max-w-sm sm:aspect-[4/3]">
+      {/* Background halo + ring — desktop only */}
+      <div className="absolute inset-0 hidden place-items-center sm:grid" aria-hidden>
         <div className="h-[92%] w-[92%] rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
       </div>
-      <div className="absolute inset-2 grid place-items-center" aria-hidden>
+      <div className="absolute inset-2 hidden place-items-center sm:grid" aria-hidden>
         <div className="h-full w-full rounded-full border border-primary/15" />
       </div>
       <img
