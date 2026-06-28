@@ -278,7 +278,8 @@ function HeroVisual() {
 function Hero() {
   return (
     <section className="bg-secondary/60">
-      <div className="mx-auto max-w-7xl px-4 py-4 md:px-8 md:py-6">
+      <div className="mx-auto max-w-7xl px-4 py-5 md:px-8 md:py-10">
+
         {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
         <div className="grid grid-cols-[1fr_46%] items-center gap-3 md:grid-cols-2 md:gap-8">
           <div className="md:order-1">
@@ -340,10 +341,11 @@ function Hero() {
 
 function TrustStrip() {
   return (
-    <section className="mx-auto max-w-7xl px-3 py-2 md:px-8 md:py-4">
-      <div className="rounded-[10px] border border-border bg-card shadow-sm md:p-6">
+    <section className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-5">
+      <div className="rounded-[10px] border border-border bg-card p-2 shadow-sm md:p-6">
         {/* Mobile: horizontal scroll single row. Desktop: 4-col grid with dividers. */}
-        <ul className="flex gap-3 overflow-x-auto px-3 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-4 md:gap-0 md:overflow-visible md:p-0 md:divide-x md:divide-border">
+        <ul className="flex gap-3 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-4 md:gap-0 md:overflow-visible md:divide-x md:divide-border">
+
           {TRUST.map((t) => (
             <li
               key={t.label}
@@ -372,7 +374,7 @@ function TrustStrip() {
 function Services() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   return (
-    <section id="services" className="mx-auto max-w-7xl px-3 pb-6 md:px-8 md:pb-10">
+    <section id="services" className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-6">
       <h2 className="sr-only">Our Services</h2>
       <div className="flex gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-[1fr_1fr_1fr_300px] lg:gap-5">
         {SERVICES.map((s) => (
@@ -441,8 +443,9 @@ function Services() {
 
 function LibrarySection() {
   return (
-    <section id="library" className="mx-auto max-w-7xl px-4 pb-10 md:px-8 md:pb-14">
-      <div className="mb-4 flex items-end justify-between gap-4">
+    <section id="library" className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-6">
+      <div className="mb-3 flex items-end justify-between gap-4 md:mb-4">
+
         <h2 className="font-serif text-2xl font-semibold text-primary md:text-3xl">
           Lung Health Library
         </h2>
@@ -473,8 +476,9 @@ function LibrarySection() {
 
 function About() {
   return (
-    <section id="about" className="mx-auto max-w-7xl px-4 pb-12 md:px-8 md:pb-16">
-      <Card className="grid gap-6 rounded-[12px] border-border p-6 shadow-sm md:grid-cols-[240px_1fr_320px] md:items-center md:p-8">
+    <section id="about" className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-6 md:pb-10">
+      <Card className="grid gap-5 rounded-[12px] border-border p-5 shadow-sm md:grid-cols-[240px_1fr_320px] md:items-center md:gap-6 md:p-8">
+
         <div className="mx-auto w-44 md:w-full">
           <DoctorPortrait shape="square" />
         </div>
