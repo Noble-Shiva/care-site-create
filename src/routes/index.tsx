@@ -55,6 +55,18 @@ import libPollution from "@/assets/lib-pollution.webp.asset.json";
 import libHealthyLungs from "@/assets/lib-healthy_lungs.webp.asset.json";
 import libFamilyDoc from "@/assets/lib-family_doc.webp.asset.json";
 import libChestSpecialist from "@/assets/lib-chest_specialist.webp.asset.json";
+import detailCopd from "@/assets/detail-copd_1_LHL.webp.asset.json";
+import detailAsthma from "@/assets/detail-asthma_1_LHL.webp.asset.json";
+import detailCough from "@/assets/detail-cough_LHL.webp.asset.json";
+import detailAllergy from "@/assets/detail-allergy_LHL.webp.asset.json";
+import detailCopdAsthma from "@/assets/detail-copd_asthma_LHL.webp.asset.json";
+import detailPollution from "@/assets/detail-pollution_LHL.webp.asset.json";
+import detailPft from "@/assets/detail-pft_LHL.webp.asset.json";
+import detailLungs from "@/assets/detail-lungs_LHL.webp.asset.json";
+import detailFamily from "@/assets/detail-fam_health_LHL.webp.asset.json";
+import detailChest from "@/assets/detail-chest_LHL.webp.asset.json";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 export const Route = createFileRoute("/")({
   head: () => ({
