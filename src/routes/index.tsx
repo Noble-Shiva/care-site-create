@@ -484,10 +484,10 @@ function LibrarySection() {
           <a
             key={l.label}
             href="#library"
-            className="flex items-center justify-center gap-3 rounded-[12px] border border-border bg-card p-2 pl-4 text-[13px] font-semibold leading-snug text-primary transition-colors hover:border-primary hover:bg-secondary md:w-28 md:shrink-0 md:gap-2 md:p-2 md:justify-center md:text-sm"
+            className="flex items-center justify-start gap-3 rounded-[12px] border border-border bg-card p-2 pl-4 text-[13px] font-semibold leading-snug text-primary transition-colors hover:border-primary hover:bg-secondary md:w-28 md:shrink-0 md:gap-2 md:p-2 md:justify-center md:text-sm"
           >
             <img src={l.img} alt="" className="h-10 w-10 shrink-0 object-contain md:h-8 md:w-8" loading="lazy" />
-            <span className="text-center">{l.label}</span>
+            <span className="md:text-center">{l.label}</span>
           </a>
         ))}
       </div>
