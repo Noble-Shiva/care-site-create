@@ -10,6 +10,10 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import faviconIco from "../assets/favicon.ico.asset.json";
+import favicon32 from "../assets/favicon-32.png.asset.json";
+import favicon180 from "../assets/favicon-180.png.asset.json";
+import favicon192 from "../assets/favicon-192.png.asset.json";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
