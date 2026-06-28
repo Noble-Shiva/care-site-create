@@ -115,21 +115,27 @@ const TRUST = [
 const SERVICES = [
   {
     image: serviceOnline.url,
+    imageDesktop: serviceOnlineDesktop.url,
     imageClass: "object-contain",
+    imageDesktopClass: "object-cover",
     title: "Online Consultation",
     titleTe: "ఆన్‌లైన్ సంప్రదింపులు",
     desc: "Get expert advice from the comfort of your home.",
   },
   {
     image: serviceClinic.url,
+    imageDesktop: serviceClinicDesktop.url,
     imageClass: "object-contain",
+    imageDesktopClass: "object-cover",
     title: "In-Clinic Consultation",
     titleTe: "క్లినిక్‌లో సంప్రదింపులు",
     desc: "Personalized evaluation and treatment with advanced diagnostic facilities.",
   },
   {
     image: servicePft.url,
+    imageDesktop: servicePftDesktop.url,
     imageClass: "object-cover",
+    imageDesktopClass: "object-cover",
     title: "PFT",
     titleSub: "(Pulmonary Function Test / Spirometry)",
     titleTe: "ఊపిరితిత్తుల పనితీరును పరీక్షించే విధానం",
