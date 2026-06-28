@@ -59,6 +59,26 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "MedicalBusiness",
+          name: "Mantri Aroha Clinic",
+          description:
+            "Respiratory and family care by Dr Mantri Vijaya Bhaskar — Asthma, COPD, chronic cough, allergy and preventive lung health.",
+          url: "https://m-a-c.lovable.app/",
+          telephone: "+91 98765 43210",
+          email: "hello@mantriarohaclinic.in",
+          medicalSpecialty: ["Pulmonary", "FamilyPractice"],
+          physician: {
+            "@type": "Physician",
+            name: "Dr Mantri Vijaya Bhaskar",
+          },
+        }),
+      },
+    ],
   }),
   component: HomePage,
 });
@@ -374,6 +394,7 @@ function Services() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   return (
     <section id="services" className="mx-auto max-w-7xl px-3 pb-6 md:px-8 md:pb-10">
+      <h2 className="sr-only">Our Services</h2>
       <div className="flex gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-[1fr_1fr_1fr_300px] lg:gap-5">
         {SERVICES.map((s) => (
           <Card
