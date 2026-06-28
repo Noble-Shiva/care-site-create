@@ -443,8 +443,9 @@ function Services() {
 
 function LibrarySection() {
   return (
-    <section id="library" className="mx-auto max-w-7xl px-4 pb-10 md:px-8 md:pb-14">
-      <div className="mb-4 flex items-end justify-between gap-4">
+    <section id="library" className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-6">
+      <div className="mb-3 flex items-end justify-between gap-4 md:mb-4">
+
         <h2 className="font-serif text-2xl font-semibold text-primary md:text-3xl">
           Lung Health Library
         </h2>
