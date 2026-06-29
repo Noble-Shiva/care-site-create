@@ -74,7 +74,7 @@ function LibraryIndex() {
       <main className="min-h-screen bg-background">
         <div className="mx-auto max-w-7xl px-4 pt-2 pb-3 md:px-8 md:pt-3 md:pb-4">
           <h1 className="font-serif text-xl font-semibold text-primary md:text-3xl">Lung Health Library</h1>
-          <p className="mt-0.5 text-xs text-muted-foreground md:text-sm">Tap any topic below to view the guide.</p>
+          <p className="mt-0.5 text-xs text-muted-foreground md:text-sm">Tap a topic below to learn more.</p>
 
           <div className="mt-2 space-y-1.5 md:mt-3 md:space-y-2">
             {rows.map((row, rIdx) => (
