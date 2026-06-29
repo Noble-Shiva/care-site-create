@@ -454,7 +454,9 @@ function Hero() {
                 Dr. Mantri Vijaya Bhaskar
               </p>
               <p className="text-[11px] text-foreground/80 md:text-sm">
-                Chest Physician (MBBS, DTCD)
+                Chest Physician & Family Physician
+                <br />
+                M.B.B.S., DTCD (Chest Medicine)
               </p>
               <p className="text-[11px] text-foreground/80 md:text-sm">
                 Chest Physician & Family Physician
