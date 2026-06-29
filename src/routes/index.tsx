@@ -275,6 +275,13 @@ function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
 function HeroVisual() {
   return (
     <div className="relative mx-auto w-full min-h-[110px] max-sm:min-h-[132px] max-w-sm sm:aspect-square">
+      {/* Background halo + ring — desktop only */}
+      <div className="absolute inset-0 hidden place-items-center sm:grid" aria-hidden>
+        <div className="aspect-square h-full w-auto rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
+      </div>
+      <div className="absolute inset-2 hidden place-items-center sm:grid" aria-hidden>
+        <div className="aspect-square h-full w-auto rounded-full border border-primary/15" />
+      </div>
       <img
         src={doctorTransparent.url}
         alt="Dr Mantri Vijaya Bhaskar"
@@ -638,7 +645,6 @@ function Footer() {
               <a
                 href={a.href}
                 target="_blank"
-                rel="noopener noreferrer"
                 className="flex flex-col items-center gap-1 rounded-[10px] p-1 text-center transition-colors hover:bg-secondary md:flex-row md:gap-3 md:p-2 md:px-4 md:text-left"
               >
                 <span className="grid h-7 w-7 shrink-0 place-items-center md:h-10 md:w-10">
