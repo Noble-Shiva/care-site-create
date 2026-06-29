@@ -46,8 +46,6 @@ import serviceOnlineDesktop from "@/assets/service-online-desktop.png.asset.json
 import serviceClinicDesktop from "@/assets/service-clinic-desktop.png.asset.json";
 import servicePftDesktop from "@/assets/service-pft-desktop.png.asset.json";
 import servicePftMobile from "@/assets/service-pft-mobile.png.asset.json";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -577,8 +575,6 @@ function WeAreHereForYou() {
 }
 
 function LibrarySection() {
-  const [openItem, setOpenItem] = useState<(typeof LIBRARY)[number] | null>(null);
-  const [idx, setIdx] = useState(0);
   return (
     <section id="library" className="mx-auto max-w-7xl px-4 py-2 md:px-8 md:py-3">
       <div className="mb-2 flex items-end justify-between gap-3 md:mb-3">
@@ -614,51 +610,17 @@ function LibrarySection() {
             );
           }
           return (
-            <button
+            <Link
               key={l.label}
-              type="button"
-              onClick={() => {
-                if (l.details && l.details.length > 0) {
-                  setIdx(0);
-                  setOpenItem(l);
-                }
-              }}
+              to="/library"
+              search={{ item: l.label }}
               className={cardClass}
             >
               {inner}
-            </button>
+            </Link>
           );
         })}
       </div>
-      <Dialog open={!!openItem} onOpenChange={(o) => !o && setOpenItem(null)}>
-        <DialogContent className="max-w-4xl max-h-[92vh] overflow-y-auto p-2 sm:p-4">
-          <VisuallyHidden asChild>
-            <DialogTitle>{openItem?.label ?? "Lung Health"}</DialogTitle>
-          </VisuallyHidden>
-          {openItem?.details && (
-            <div className="flex flex-col items-center gap-3">
-              <img
-                src={openItem.details[idx]}
-                alt={openItem.label}
-                className="h-auto w-full rounded-md object-contain"
-              />
-              {openItem.details.length > 1 && (
-                <div className="flex items-center gap-2">
-                  {openItem.details.map((_, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setIdx(i)}
-                      className={`h-2 w-2 rounded-full ${i === idx ? "bg-primary" : "bg-muted-foreground/40"}`}
-                      aria-label={`Image ${i + 1}`}
-                    />
-                  ))}
-                </div>
-              )}
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
     </section>
   );
 }
