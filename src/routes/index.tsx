@@ -311,25 +311,6 @@ const SYMPTOMS = [
   "Smoking history",
 ];
 
-function LungMark({ className = "h-10 w-10" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 64 64"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden
-    >
-      <path d="M32 14v22" />
-      <path d="M28 22c-2 6-8 8-12 8-2 8 0 18 8 20 4 1 8-2 8-6V22z" />
-      <path d="M36 22c2 6 8 8 12 8 2 8 0 18-8 20-4 1-8-2-8-6V22z" />
-      <path d="M30 18c0-2 1-3 2-3s2 1 2 3" />
-    </svg>
-  );
-}
 
 function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
   const radius = shape === "circle" ? "rounded-full" : "rounded-[14px]";
@@ -357,14 +338,14 @@ function Header() {
             loading="eager"
           />
           <span className="min-w-0">
-            <span className="block truncate text-[17px] font-semibold text-foreground md:text-base">
+            <span className="block truncate text-[17px] font-semibold text-foreground md:text-[22px] md:leading-tight">
               Mantri Aroha Clinic
             </span>
-            <span className="block truncate text-[10px] italic text-muted-foreground md:text-sm">
+            <span className="block truncate text-[10px] italic text-muted-foreground md:text-[11px]">
               Care with Compassion
             </span>
             <span className="hidden text-[11px] text-muted-foreground md:block">
-              Respiratory &amp; Family Care | Lung Health Library
+              Chest Physician &amp; Family Physician
             </span>
           </span>
         </a>
@@ -416,13 +397,13 @@ function Header() {
 
 function HeroVisual() {
   return (
-    <div className="relative mx-auto w-full max-w-sm sm:aspect-[4/3]">
+    <div className="relative mx-auto w-full max-w-sm sm:aspect-square">
       {/* Background halo + ring — desktop only */}
       <div className="absolute inset-0 hidden place-items-center sm:grid" aria-hidden>
-        <div className="h-[92%] w-[92%] rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
+        <div className="aspect-square h-full w-auto rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
       </div>
       <div className="absolute inset-2 hidden place-items-center sm:grid" aria-hidden>
-        <div className="h-full w-full rounded-full border border-primary/15" />
+        <div className="aspect-square h-full w-auto rounded-full border border-primary/15" />
       </div>
       <img
         src={doctorTransparent.url}
@@ -442,10 +423,6 @@ function Hero() {
         {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
         <div className="grid grid-cols-[1fr_46%] items-center gap-1.5 md:grid-cols-2 md:gap-8">
           <div className="md:order-1">
-            <div className="hidden items-center gap-2 text-primary md:flex">
-              <LungMark className="h-5 w-5 md:h-6 md:w-6" />
-              <span className="text-xs font-medium md:text-sm">A practice built on compassion</span>
-            </div>
             <div className="mt-1.5 md:mt-4">
               <p className="text-[19px] font-bold leading-tight text-foreground md:text-3xl">
                 Dr. Mantri Vijaya Bhaskar
@@ -906,14 +883,14 @@ function HomePage() {
       <main className="pb-24 md:pb-0">
         <Hero />
         <div className="flex flex-col">
-          <div className="order-3 md:order-1">
+          <div className="order-1 md:order-1">
+            <WeAreHereForYou />
+          </div>
+          <div className="order-3 md:order-2">
             <TrustStrip />
           </div>
-          <div className="order-2 md:order-2">
+          <div className="order-2 md:order-3">
             <Services />
-          </div>
-          <div className="order-1 md:order-3">
-            <WeAreHereForYou />
           </div>
         </div>
         <LibrarySection />
