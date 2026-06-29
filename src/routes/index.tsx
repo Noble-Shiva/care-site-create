@@ -260,19 +260,6 @@ const SERVICES: ServiceItem[] = [
   },
 ];
 
-const LIBRARY: { img: string; label: string; details?: string[] }[] = [
-  { img: libCopd.url, label: "COPD", details: [detailCopd.url, detailCopd2.url] },
-  { img: libAsthma.url, label: "Asthma", details: [detailAsthma.url, detailAsthma2.url] },
-  { img: libCough.url, label: "Cough", details: [detailCough.url] },
-  { img: libAllergy.url, label: "Allergy", details: [detailAllergy.url] },
-  { img: libCopdAsthma.url, label: "COPD & Asthma", details: [detailCopdAsthma.url] },
-  { img: libSmoking.url, label: "Smoking", details: [detailSmoking.url] },
-  { img: libPollution.url, label: "Pollution", details: [detailPollution.url] },
-  { img: libPft.url, label: "PFT", details: [detailPft.url] },
-  { img: libHealthyLungs.url, label: "Healthy Lungs", details: [detailLungs.url] },
-  { img: libFamilyDoc.url, label: "Family Doctor", details: [detailFamily.url] },
-  { img: libChestSpecialist.url, label: "Chest Specialist", details: [detailChest.url] },
-];
 
 const SYMPTOMS = ["Persistent cough", "Breathlessness", "Wheezing", "Chest tightness", "Smoking history"];
 
