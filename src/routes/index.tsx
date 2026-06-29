@@ -449,10 +449,18 @@ function Hero() {
             <h1 className="mt-1.5 font-serif text-[26px] font-semibold leading-[1.05] tracking-tight text-foreground md:mt-4 md:text-4xl lg:text-5xl">
               Helping you breathe better every day
             </h1>
-            <p className="mt-1.5 text-[11px] font-medium text-foreground/80 md:mt-4 md:text-sm">
+            <div className="mt-1.5 md:mt-4">
+              <p className="font-serif text-[15px] font-semibold leading-tight text-primary md:text-lg">
+                Dr. Mantri Vijaya Bhaskar
+              </p>
+              <p className="text-[11px] text-foreground/80 md:text-sm">
+                Chest Physician (MBBS, DTCD)
+              </p>
+            </div>
+            <p className="mt-1.5 hidden text-[11px] font-medium text-foreground/80 md:mt-3 md:block md:text-sm">
               Evidence-based care for
             </p>
-            <ul className="mt-0.5 flex flex-wrap gap-x-2 gap-y-1 text-[11px] text-foreground md:text-base">
+            <ul className="mt-0.5 hidden flex-wrap gap-x-2 gap-y-1 text-[11px] text-foreground md:flex md:text-base">
               {CONDITIONS.map((c, i) => (
                 <li key={c} className="flex items-center gap-2">
                   {i > 0 && <span className="text-primary">•</span>}
@@ -607,10 +615,10 @@ function Services() {
 
 function WeAreHereForYou() {
   return (
-    <section className="mx-auto max-w-7xl px-4 pt-0.5 pb-2 md:px-8 md:py-4">
-      <div className="rounded-[12px] border border-border bg-card p-3 shadow-sm md:p-4">
-        {/* Title with decorative lines */}
-        <div className="mb-3 flex items-center justify-center gap-2 md:mb-4">
+    <section className="mx-auto max-w-7xl px-4 pt-1 pb-1.5 md:px-8 md:py-4">
+      <div className="rounded-[12px] border border-border bg-card p-1.5 shadow-sm md:p-4">
+        {/* Title with decorative lines (desktop only) */}
+        <div className="mb-3 hidden items-center justify-center gap-2 md:mb-4 md:flex">
           <span className="h-px w-8 bg-border md:w-16" />
           <span className="h-1.5 w-1.5 rounded-full bg-primary" />
           <h2 className="font-serif text-xs font-semibold text-foreground md:text-base">
@@ -896,10 +904,10 @@ function HomePage() {
           <div className="order-3 md:order-1">
             <TrustStrip />
           </div>
-          <div className="order-1 md:order-2">
+          <div className="order-2 md:order-2">
             <Services />
           </div>
-          <div className="order-2 md:order-3">
+          <div className="order-1 md:order-3">
             <WeAreHereForYou />
           </div>
         </div>
