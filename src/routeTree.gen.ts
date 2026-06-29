@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LibraryChestSpecialistRouteImport } from './routes/library.chest-specialist'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -22,31 +23,40 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LibraryChestSpecialistRoute = LibraryChestSpecialistRouteImport.update({
+  id: '/library/chest-specialist',
+  path: '/library/chest-specialist',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/library/chest-specialist': typeof LibraryChestSpecialistRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/library/chest-specialist': typeof LibraryChestSpecialistRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/library/chest-specialist': typeof LibraryChestSpecialistRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap.xml'
+  fullPaths: '/' | '/sitemap.xml' | '/library/chest-specialist'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap.xml'
-  id: '__root__' | '/' | '/sitemap.xml'
+  to: '/' | '/sitemap.xml' | '/library/chest-specialist'
+  id: '__root__' | '/' | '/sitemap.xml' | '/library/chest-specialist'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  LibraryChestSpecialistRoute: typeof LibraryChestSpecialistRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/library/chest-specialist': {
+      id: '/library/chest-specialist'
+      path: '/library/chest-specialist'
+      fullPath: '/library/chest-specialist'
+      preLoaderRoute: typeof LibraryChestSpecialistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  LibraryChestSpecialistRoute: LibraryChestSpecialistRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
