@@ -6,7 +6,7 @@ import logoFull from "@/assets/logo-full.png.asset.json";
 export const Route = createFileRoute("/library/chest-specialist")({
   head: () => {
     const url =
-      "https://care-site-create.lovable.app/library/chest-specialist";
+      "https://m-a-c.lovable.app/library/chest-specialist";
     const title =
       "Chest Specialist (Pulmonologist) in Hyderabad — When to Consult | Mantri Aroha Clinic";
     const description =
@@ -54,14 +54,14 @@ export const Route = createFileRoute("/library/chest-specialist")({
             mainEntity: {
               "@type": "MedicalBusiness",
               name: "Mantri Aroha Clinic",
-              url: "https://care-site-create.lovable.app/",
+              url: "https://m-a-c.lovable.app/",
               medicalSpecialty: "Pulmonary",
             },
             breadcrumb: {
               "@type": "BreadcrumbList",
               itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Home", item: "https://care-site-create.lovable.app/" },
-                { "@type": "ListItem", position: 2, name: "Lung Health Library", item: "https://care-site-create.lovable.app/#library" },
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://m-a-c.lovable.app/" },
+                { "@type": "ListItem", position: 2, name: "Lung Health Library", item: "https://m-a-c.lovable.app/#library" },
                 { "@type": "ListItem", position: 3, name: "Chest Specialist", item: url },
               ],
             },
