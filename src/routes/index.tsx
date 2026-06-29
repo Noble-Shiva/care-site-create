@@ -597,19 +597,8 @@ function Services() {
 
 function WeAreHereForYou() {
   return (
-    <section className="mx-auto max-w-7xl px-4 pt-1 pb-1.5 md:px-8 md:py-4">
-      <div className="rounded-[12px] border border-border bg-card p-1.5 shadow-sm md:p-4">
-        {/* Title with decorative lines (desktop only) */}
-        <div className="mb-3 hidden items-center justify-center gap-2 md:mb-4 md:flex">
-          <span className="h-px w-8 bg-border md:w-16" />
-          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-          <h2 className="font-serif text-xs font-semibold text-foreground md:text-base">
-            We are here for you
-          </h2>
-          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-          <span className="h-px w-8 bg-border md:w-16" />
-        </div>
-
+    <section className="mx-auto max-w-7xl px-4 pt-1 pb-1.5 md:px-8 md:pt-2 md:pb-2">
+      <div className="rounded-[12px] border border-border bg-card p-1.5 shadow-sm md:p-3">
         <div className="grid grid-cols-2 gap-3 md:gap-4 md:divide-x md:divide-border">
           {/* Chest Physician */}
           <div className="flex items-center gap-2 md:gap-4 md:px-4">
