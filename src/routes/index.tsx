@@ -527,7 +527,7 @@ function Services() {
                 asChild
                 className="mt-2 h-8 rounded-[10px] px-3 text-[10px] font-semibold tracking-[0.14em] sm:mt-3 sm:h-9 sm:px-5 sm:text-[11px] lg:mt-2 lg:self-start"
               >
-                <a href={BOOK_HREF}>BOOK NOW</a>
+                <a href={BOOK_HREF}>Book Now</a>
               </Button>
             </div>
           </Card>
