@@ -416,7 +416,7 @@ function Header() {
 
 function HeroVisual() {
   return (
-    <div className="relative mx-auto aspect-[2/3] w-full max-w-sm sm:aspect-[4/3]">
+    <div className="relative mx-auto w-full max-w-sm sm:aspect-[4/3]">
       {/* Background halo + ring — desktop only */}
       <div className="absolute inset-0 hidden place-items-center sm:grid" aria-hidden>
         <div className="h-[92%] w-[92%] rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
@@ -437,7 +437,7 @@ function HeroVisual() {
 function Hero() {
   return (
     <section className="bg-secondary/60">
-      <div className="mx-auto max-w-7xl px-4 py-0 md:px-8 md:py-10">
+      <div className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-10">
 
         {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
         <div className="grid grid-cols-[1fr_46%] items-center gap-1.5 md:grid-cols-2 md:gap-8">
