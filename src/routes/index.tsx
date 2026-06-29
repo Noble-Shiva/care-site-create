@@ -256,7 +256,6 @@ const SERVICES: ServiceItem[] = [
   },
 ];
 
-
 const SYMPTOMS = ["Persistent cough", "Breathlessness", "Wheezing", "Chest tightness", "Smoking history"];
 
 function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
@@ -272,7 +271,6 @@ function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
     </div>
   );
 }
-
 
 function HeroVisual() {
   return (
@@ -532,20 +530,15 @@ function LibrarySection() {
               />
             </>
           );
-          if (l.label === "Chest Specialist") {
-            return (
-              <Link key={l.label} to="/library/chest-specialist" className={cardClass}>
-                {inner}
-              </Link>
-            );
-          }
+          // if (l.label === "Chest Specialist") {
+          //   return (
+          //     <Link key={l.label} to="/library/chest-specialist" className={cardClass}>
+          //       {inner}
+          //     </Link>
+          //   );
+          // }
           return (
-            <Link
-              key={l.label}
-              to="/library"
-              search={{ item: l.label }}
-              className={cardClass}
-            >
+            <Link key={l.label} to="/library" search={{ item: l.label }} className={cardClass}>
               {inner}
             </Link>
           );
