@@ -79,33 +79,20 @@ function LibraryIndex() {
           <h1 className="font-serif text-2xl font-semibold text-primary md:text-4xl">Lung Health Library</h1>
           <p className="mt-1 text-sm text-muted-foreground md:text-base">Tap any topic below to view the guide.</p>
 
-          <div className="mt-4 space-y-2">
+          <div className="mt-4 space-y-2 md:space-y-3">
             {rows.map((row, rIdx) => (
               <div
                 key={rIdx}
-                className="flex gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                className={`grid grid-cols-2 gap-2 ${rIdx === 0 ? "md:grid-cols-6" : "md:grid-cols-5"} md:gap-3`}
               >
                 {row.map((l) => {
                   const isActive = selected.label === l.label;
-                  // if (l.label === "Chest Specialist") {
-                  //   return (
-                  //     <Link
-                  //       key={l.label}
-                  //       to="/library/chest-specialist"
-                  //       className="group relative flex w-32 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-[12px] border border-border bg-card p-2 pr-5 text-center text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-secondary md:w-36"
-                  //     >
-                  //       <img src={l.img} alt="" className="h-8 w-8 shrink-0 object-contain" loading="lazy" />
-                  //       <span>{l.label}</span>
-                  //       <ChevronRight aria-hidden className="absolute right-1.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-primary/60" />
-                  //     </Link>
-                  //   );
-                  // }
                   return (
                     <button
                       key={l.label}
                       type="button"
                       onClick={() => handleSelect(l)}
-                      className={`group relative flex w-32 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-[12px] border bg-card p-2 pr-5 text-center text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-secondary md:w-36 ${
+                      className={`group relative flex cursor-pointer items-center justify-center gap-2 rounded-[12px] border bg-card px-2 py-2 pr-5 text-center text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-secondary md:justify-center md:px-2 md:py-1.5 ${
                         isActive ? "border-primary bg-secondary" : "border-border"
                       }`}
                     >
