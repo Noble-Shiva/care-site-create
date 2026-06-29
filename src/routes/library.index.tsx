@@ -1,6 +1,6 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, ChevronRight, Loader2 } from "lucide-react";
+import { ChevronRight, Loader2 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { LIBRARY, type LibraryItem } from "@/lib/library-items";
 
@@ -72,18 +72,15 @@ function LibraryIndex() {
     <>
       <Header />
       <main className="min-h-screen bg-background">
-        <div className="mx-auto max-w-7xl px-4 py-4 md:px-8 md:py-6">
-          <Link to="/" className="mb-3 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
-            <ArrowLeft className="h-4 w-4" /> Back to home
-          </Link>
-          <h1 className="font-serif text-2xl font-semibold text-primary md:text-4xl">Lung Health Library</h1>
-          <p className="mt-1 text-sm text-muted-foreground md:text-base">Tap any topic below to view the guide.</p>
+        <div className="mx-auto max-w-7xl px-4 pt-2 pb-3 md:px-8 md:pt-3 md:pb-4">
+          <h1 className="font-serif text-xl font-semibold text-primary md:text-3xl">Lung Health Library</h1>
+          <p className="mt-0.5 text-xs text-muted-foreground md:text-sm">Tap any topic below to view the guide.</p>
 
-          <div className="mt-4 space-y-2 md:space-y-3">
+          <div className="mt-2 space-y-1.5 md:mt-3 md:space-y-2">
             {rows.map((row, rIdx) => (
               <div
                 key={rIdx}
-                className={`grid grid-cols-2 gap-2 ${rIdx === 0 ? "md:grid-cols-6" : "md:grid-cols-5"} md:gap-3`}
+                className={`grid grid-cols-2 gap-1.5 ${rIdx === 0 ? "md:grid-cols-6" : "md:grid-cols-5"} md:gap-2`}
               >
                 {row.map((l) => {
                   const isActive = selected.label === l.label;
@@ -92,15 +89,15 @@ function LibraryIndex() {
                       key={l.label}
                       type="button"
                       onClick={() => handleSelect(l)}
-                      className={`group relative flex cursor-pointer items-center justify-center gap-2 rounded-[12px] border bg-card px-2 py-2 pr-5 text-center text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-secondary md:justify-center md:px-2 md:py-1.5 ${
+                      className={`group relative flex cursor-pointer items-center justify-center gap-1.5 rounded-[12px] border bg-card px-2 py-1.5 pr-5 text-center text-xs font-semibold text-primary transition-colors hover:border-primary hover:bg-secondary md:justify-center md:px-2 md:py-1 ${
                         isActive ? "border-primary bg-secondary" : "border-border"
                       }`}
                     >
-                      <img src={l.img} alt="" className="h-8 w-8 shrink-0 object-contain" loading="lazy" />
+                      <img src={l.img} alt="" className="h-6 w-6 shrink-0 object-contain md:h-7 md:w-7" loading="lazy" />
                       <span>{l.label}</span>
                       <ChevronRight
                         aria-hidden
-                        className="absolute right-1.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-primary/60"
+                        className="absolute right-1 top-1/2 h-3 w-3 -translate-y-1/2 text-primary/60"
                       />
                     </button>
                   );
