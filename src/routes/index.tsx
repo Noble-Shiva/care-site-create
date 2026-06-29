@@ -900,6 +900,7 @@ function HomePage() {
             <Services />
           </div>
         </div>
+        <WeAreHereForYou />
         <LibrarySection />
         <About />
       </main>
