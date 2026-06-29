@@ -357,14 +357,14 @@ function Header() {
             loading="eager"
           />
           <span className="min-w-0">
-            <span className="block truncate text-[17px] font-semibold text-foreground md:text-base">
+            <span className="block truncate text-[17px] font-semibold text-foreground md:text-[22px] md:leading-tight">
               Mantri Aroha Clinic
             </span>
-            <span className="block truncate text-[10px] italic text-muted-foreground md:text-sm">
+            <span className="block truncate text-[10px] italic text-muted-foreground md:text-[11px]">
               Care with Compassion
             </span>
             <span className="hidden text-[11px] text-muted-foreground md:block">
-              Respiratory &amp; Family Care | Lung Health Library
+              Chest Physician &amp; Family Physician
             </span>
           </span>
         </a>
