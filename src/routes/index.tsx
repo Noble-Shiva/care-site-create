@@ -180,7 +180,7 @@ const MAPS_URL = "https://maps.app.goo.gl/AmpGVLWHgNALawMS8?g_st=aw";
 
 const YOUTUBE_URL = "https://www.youtube.com/@mantriaroha";
 const TELEGRAM_URL = "https://t.me/+919032525189";
-const BOOK_HREF = "#book";
+const BOOK_HREF = "https://hplix.in/HPE37498-2";
 
 const NAV = [
   { label: "Home", href: "#" },
