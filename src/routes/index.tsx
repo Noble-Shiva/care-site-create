@@ -335,7 +335,7 @@ function Hero() {
 
             <div className="mt-4 hidden flex-col gap-2 sm:flex sm:flex-row md:mt-5">
               <Button asChild size="lg" className="h-12 rounded-[10px] px-5">
-                <a href={BOOK_HREF}>
+                <a href={BOOK_HREF} target="_blank" rel="noopener noreferrer">
                   <Video className="mr-2 h-4 w-4" />
                   <span className="flex flex-col items-start leading-tight">
                     <span className="text-sm font-semibold">Online Consultation</span>
