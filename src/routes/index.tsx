@@ -49,17 +49,17 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Mantri Aroha Clinic | Pulmonologist & Family Doctor — Asthma, COPD, Allergy Care",
+        title: "Mantri Aroha Clinic | Chest Physician & Family Physician — Asthma, COPD, Allergy Care",
       },
       {
         name: "description",
         content:
-          "Consult Dr Mantri Vijaya Bhaskar (MBBS, DTCD) for asthma, COPD, chronic cough, allergy, smoking cessation & pulmonary function testing (PFT/Spirometry). Online & in-clinic consultations with a trusted chest physician and family doctor.",
+          "Consult Dr Mantri Vijaya Bhaskar (MBBS, DTCD) for asthma, COPD, chronic cough, allergy, smoking cessation & pulmonary function testing (PFT/Spirometry). Online & in-clinic consultations with a trusted chest physician and family physician.",
       },
       {
         name: "keywords",
         content:
-          "pulmonologist, chest physician, family doctor, asthma treatment, COPD treatment, chronic cough, allergy specialist, pulmonary function test, spirometry, PFT, online consultation, lung specialist, quit smoking, breathlessness, wheezing, Mantri Aroha Clinic, Dr Mantri Vijaya Bhaskar",
+          "chest physician, family physician, asthma treatment, COPD treatment, chronic cough, allergy specialist, pulmonary function test, spirometry, PFT, online consultation, lung specialist, quit smoking, breathlessness, wheezing, Mantri Aroha Clinic, Dr Mantri Vijaya Bhaskar",
       },
       { name: "robots", content: "index, follow" },
       {
