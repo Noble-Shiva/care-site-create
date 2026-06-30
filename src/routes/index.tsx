@@ -64,23 +64,23 @@ export const Route = createFileRoute("/")({
       { name: "robots", content: "index, follow" },
       {
         property: "og:title",
-        content: "Mantri Aroha Clinic | Pulmonologist & Family Doctor — Asthma, COPD, Allergy Care",
+        content: "Mantri Aroha Clinic | Chest Physician & Family Physician — Asthma, COPD, Allergy Care",
       },
       {
         property: "og:description",
         content:
-          "Expert respiratory & family care by Dr Mantri Vijaya Bhaskar — asthma, COPD, chronic cough, allergy, PFT/Spirometry. Online & in-clinic consultations. Lung Health Library with easy guides.",
+          "Expert consultation & family care by Dr Mantri Vijaya Bhaskar — asthma, COPD, chronic cough, allergy, PFT/Spirometry. Online & in-clinic consultations. Lung Health Library with easy guides.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://mantriaroha.com/" },
       {
         name: "twitter:title",
-        content: "Mantri Aroha Clinic | Pulmonologist & Family Doctor — Asthma, COPD, Allergy Care",
+        content: "Mantri Aroha Clinic | Chest Physician & Family Physician — Asthma, COPD, Allergy Care",
       },
       {
         name: "twitter:description",
         content:
-          "Trusted chest physician & family doctor. Asthma, COPD, allergy, chronic cough, PFT/Spirometry. Online & in-clinic consultations.",
+          "Trusted chest physician & family physician. Asthma, COPD, allergy, chronic cough, PFT/Spirometry. Online & in-clinic consultations.",
       },
     ],
     links: [{ rel: "canonical", href: "https://mantriaroha.com/" }],
