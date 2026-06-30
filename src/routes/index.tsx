@@ -105,7 +105,7 @@ export const Route = createFileRoute("/")({
               lastReviewed: "2026-06-29",
               primaryImageOfPage: {
                 "@type": "ImageObject",
-                url: "https://mantriaroha.com/share-image.webp",
+                url: "https://mantriaroha.com/share-image.jpg",
               },
             },
             {
